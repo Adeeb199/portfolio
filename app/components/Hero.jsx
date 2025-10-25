@@ -157,7 +157,7 @@ export default function Hero() {
               }`}
             >
               <Image
-                src="https://raw.githubusercontent.com/Adeeb199/portfolio/main/portfolio-image.jpg"
+                src="/portfolio-image.jpg"
                 alt="Adeeb Ibrahim - React & Three.js Developer"
                 width={650}
                 height={520}

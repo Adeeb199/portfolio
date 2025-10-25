@@ -1,3 +1,4 @@
+"use client";
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -9,27 +10,18 @@ export default function PDFGallery() {
   const pdfs = [
     {
       title: "Project Case Study",
-      link: "https://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf",
+      description: "Detailed overview of project workflows and results.",
+      link: "/sandeepsingh-portfolio.pdf",
     },
     {
       title: "Resume / CV",
-      link: "https://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf",
+      description: "My professional experience and education details.",
+      link: "/Sandeep-sindu.pdf",
     },
     {
-      title: "Design Document",
-      link: "https://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf",
-    },
-     {
-      title: "Project Case Study",
-      link: "https://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf",
-    },
-    {
-      title: "Resume / CV",
-      link: "https://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf",
-    },
-    {
-      title: "Design Document",
-      link: "https://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf",
+      title: "Business Card",
+      description: "Design and contact info showcased in PDF format.",
+      link: "/Businesscard.pdf",
     },
   ];
 
@@ -59,70 +51,88 @@ export default function PDFGallery() {
         <div className="grid md:grid-cols-3 gap-12 place-items-center">
           {pdfs.map((pdf, index) => (
             <motion.div
-              key={index}
+              key={index} // unique key
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{
-                rotateY: 10,
-                rotateX: -5,
-                scale: 1.05,
-                transition: { type: "spring", stiffness: 200 },
-              }}
-              className={`relative w-full max-w-sm p-6 rounded-3xl shadow-2xl border overflow-hidden transition-all duration-700 backdrop-blur-xl ${
-                darkMode
-                  ? "bg-slate-800/70 border-slate-700 hover:border-indigo-500/60"
-                  : "bg-white/80 border-slate-200 hover:border-indigo-400/60"
-              }`}
-              style={{ perspective: "1000px" }}
+              whileHover={{ scale: 1.05 }}
+              className="w-full max-w-sm cursor-pointer"
+              onClick={() => window.open(pdf.link, "_blank")} // open full screen
             >
-              {/* PDF Preview */}
-              <div className="relative h-80 rounded-2xl overflow-hidden border border-slate-300 dark:border-slate-600 shadow-inner">
-                <iframe
-                  src={pdf.link}
-                  className="w-full h-full"
-                  title={pdf.title}
-                ></iframe>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-all duration-500" />
-              </div>
+              {/* Flip card container */}
+              <div className="relative w-full h-[380px] perspective">
+                <div className="relative w-full h-full transition-transform duration-700 transform-style preserve-3d hover:rotate-y-180">
+                  {/* Front */}
+                  <div
+                    className={`absolute w-full h-full rounded-3xl shadow-2xl p-6 flex flex-col justify-center items-center backface-hidden transition-colors duration-700 ${
+                      darkMode
+                        ? "bg-slate-800/80 border border-slate-700"
+                        : "bg-white/90 border border-slate-200"
+                    }`}
+                  >
+                    <h3
+                      className={`text-2xl font-bold mb-2 ${
+                        darkMode ? "text-slate-100" : "text-slate-900"
+                      }`}
+                    >
+                      {pdf.title}
+                    </h3>
+                    <p
+                      className={`text-sm md:text-base text-center ${
+                        darkMode ? "text-slate-300" : "text-slate-700"
+                      }`}
+                    >
+                      {pdf.description}
+                    </p>
+                    <span
+                      className={`mt-4 text-xs ${
+                        darkMode ? "text-slate-400" : "text-slate-500"
+                      }`}
+                    >
+                      Click to view full PDF
+                    </span>
+                  </div>
 
-              {/* Title */}
-              <h3
-                className={`text-2xl font-semibold mt-6 mb-4 ${
-                  darkMode ? "text-slate-100" : "text-slate-900"
-                }`}
-              >
-                {pdf.title}
-              </h3>
-
-              {/* Buttons */}
-              <div className="flex justify-center gap-4">
-                <motion.a
-                  href={pdf.link}
-                  target="_blank"
-                  whileHover={{ scale: 1.08 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-2 rounded-full font-medium bg-gradient-to-r from-indigo-600 to-fuchsia-500 text-white shadow-md hover:shadow-lg hover:shadow-indigo-500/40 transition-all"
-                >
-                  View Online
-                </motion.a>
-                <motion.a
-                  href={pdf.link}
-                  download
-                  whileHover={{ scale: 1.08 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`px-6 py-2 rounded-full font-medium shadow-md transition-all ${
-                    darkMode
-                      ? "bg-slate-700 text-slate-100 hover:bg-slate-600"
-                      : "bg-slate-200 text-slate-900 hover:bg-slate-300"
-                  }`}
-                >
-                  Download
-                </motion.a>
+                  {/* Back */}
+                  <div
+                    className={`absolute w-full h-full rounded-3xl shadow-2xl overflow-hidden rotate-y-180 backface-hidden transition-colors duration-700 ${
+                      darkMode
+                        ? "bg-slate-900/80 border border-slate-700"
+                        : "bg-white/90 border border-slate-200"
+                    }`}
+                  >
+                    <iframe
+                      src={pdf.link + "#toolbar=0&navpanes=0&scrollbar=0"}
+                      className="w-full h-full rounded-3xl border-0"
+                      title={pdf.title}
+                    >
+                      Your browser does not support PDFs.
+                    </iframe>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Custom CSS for flip effect */}
+      <style jsx>{`
+        .perspective {
+          perspective: 1000px;
+        }
+        .transform-style {
+          transform-style: preserve-3d;
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+        .hover\\:rotate-y-180:hover {
+          transform: rotateY(180deg);
+        }
+      `}</style>
     </section>
   );
 }
