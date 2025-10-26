@@ -3,13 +3,11 @@ import ProjectDetail from "./ProjectDetail";
 // 1️⃣ Must be server component
 export async function generateStaticParams() {
   const ids = [
-    "brand-identity",
+    "shadcn-landing",
     "social-app",
-    "creative-studio",
-    "marketing-dashboard",
-    "product-landing",
-    "startup-mobile",
-    "modern-saas",
+    "Gallery",
+    "axis-landing",
+
   ];
 
   return ids.map((id) => ({ id }));
