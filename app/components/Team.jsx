@@ -26,7 +26,7 @@ export default function Team() {
     {
       name: "Maria Akber",
       role: "Backend Developer",
-      image: "/maria.jpg",
+      image: "/Maria.jpg",
       description:
         "Expert in developing scalable backend systems with Node.js, Express, and MongoDB. Focused on API design, data security, and seamless server-client integration for modern web applications.",
     },
