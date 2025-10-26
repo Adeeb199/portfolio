@@ -12,23 +12,27 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className={` relative min-h-[90vh] flex items-center overflow-hidden transition-colors duration-700 ${
-        darkMode ? theme.background.dark : theme.background.light
-      }`}
+      className={`relative min-h-[90vh] flex items-center overflow-hidden transition-colors duration-700
+        pt-24 sm:pt-0  // 👈 Added this: gives top padding on mobile only
+        ${darkMode ? theme.background.dark : theme.background.light}`}
     >
       {/* Glowing Background Accents */}
       <div
         className={`absolute top-12 left-5 sm:top-20 sm:left-10 w-40 h-40 sm:w-64 sm:h-64 blur-3xl rounded-full opacity-40 ${
-          darkMode ? theme.glowingShapes.topLeft.dark : theme.glowingShapes.topLeft.light
+          darkMode
+            ? theme.glowingShapes.topLeft.dark
+            : theme.glowingShapes.topLeft.light
         }`}
       />
       <div
         className={`absolute bottom-12 right-5 sm:bottom-20 sm:right-10 w-60 h-60 sm:w-80 sm:h-80 blur-3xl rounded-full opacity-40 ${
-          darkMode ? theme.glowingShapes.bottomRight.dark : theme.glowingShapes.bottomRight.light
+          darkMode
+            ? theme.glowingShapes.bottomRight.dark
+            : theme.glowingShapes.bottomRight.light
         }`}
       />
 
-      <div className=" mb-10 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
+      <div className="mb-10 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
         {/* LEFT SIDE — Card */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -157,7 +161,7 @@ export default function Hero() {
               }`}
             >
               <Image
-                src="/portfolio-image.jpg"
+                src="https://raw.githubusercontent.com/Adeeb199/portfolio/main/portfolio-image.jpg"
                 alt="Adeeb Ibrahim - React & Three.js Developer"
                 width={650}
                 height={520}
