@@ -16,7 +16,7 @@ export default function Projects() {
   title: "Modern SaaS Landing Page Template",
   category: "Web Template",
   image:
-    "https://image.thum.io/get/https://shadcn-landingpage.vercel.app/",
+    "/shadcn-landingpage.png",
   description:
     "A fully-responsive landing page template built with shadcn/ui, React, TypeScript and Tailwind CSS, featuring all common sections like Hero, Features, Testimonials, Pricing and Dark Mode support.",
 },
@@ -26,7 +26,7 @@ export default function Projects() {
       title: "Social App Prototype",
       category: "Digital Experience",
       image:
-        "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?auto=format&fit=crop&w=800&q=80",
+        "/shadcn-landingpage.png",
       description:
         "A mobile-first social application prototype focusing on UX, UI, and interactive animations.",
     },
@@ -34,7 +34,7 @@ export default function Projects() {
       id: "Gallery",
       title: "Gallery",
       category: "Web Application",
-      image: "https://image.thum.io/get/https://adeeb199.github.io/Gallery/",
+      image: "/galleryproject.png",
       description: "UI/UX design for a mobile app aimed at startups.",
     },
 
@@ -43,7 +43,7 @@ export default function Projects() {
   id: "axis-landing",
   title: "Axis – Responsive Multi-Section Web App Template",
   category: "Web Application",
-  image: "https://image.thum.io/get/https://adeeb199.github.io/Axis/", 
+  image: "/axiswebsite.png", 
   description:
     "A modern, responsive productivity platform built to help users organize tasks efficiently with a clean UI and fast performance. Designed using HTML, CSS, and JavaScript with elegant animations.",
 }
