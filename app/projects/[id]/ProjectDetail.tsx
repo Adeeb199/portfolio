@@ -39,7 +39,7 @@ const projects: Project[] = [
   title: "Shadcn Landing Page Template",
   category: "UI Template",
   image:
-    "https://image.thum.io/get/https://shadcn-landingpage.vercel.app/",
+    "/shadcn-landingpage.png",
   description:
     "A minimal yet powerful landing page template built with React, TypeScript, Tailwind CSS, and shadcn/ui. It features hero sections, feature grids, pricing tiers, and testimonial layouts — ideal for SaaS startups or modern web apps.",
   budget: "Free",
@@ -88,7 +88,7 @@ const projects: Project[] = [
     title: "Product Landing Page",
     category: "Web Development",
     image:
-     "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+     "/galleryproject.png",
         
     description:
       "A conversion-optimized landing page crafted for SaaS startups. Features bold typography, responsive design, and call-to-action sections.",
@@ -112,7 +112,7 @@ const projects: Project[] = [
     title: "Gallery",
     category: "Web Applications",
     image:
-     "https://image.thum.io/get/https://adeeb199.github.io/Gallery/",
+     "/axiswebsite.png",
         
     description:
       "A sleek mobile UI concept for startup-focused applications. Prioritizes usability, onboarding experience, and aesthetic harmony.",
