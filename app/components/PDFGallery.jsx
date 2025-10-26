@@ -23,6 +23,12 @@ export default function PDFGallery() {
       description: "Design and contact info showcased in PDF format.",
       link: "/Businesscard.pdf",
     },
+    {
+      title: "Business Card",
+      description:
+        "Professional presentation showcasing services, mission, and brand identity — ideal for client demos or meetings.",
+      link: "/Businesscard.pdf", // Actual PowerPoint file
+    },
   ];
 
   return (
@@ -48,74 +54,98 @@ export default function PDFGallery() {
           My Professional Library 📂
         </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-12 place-items-center">
-          {pdfs.map((pdf, index) => (
-            <motion.div
-              key={index} // unique key
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              className="w-full max-w-sm cursor-pointer"
-              onClick={() => window.open(pdf.link, "_blank")} // open full screen
-            >
-              {/* Flip card container */}
-              <div className="relative w-full h-[380px] perspective">
-                <div className="relative w-full h-full transition-transform duration-700 transform-style preserve-3d hover:rotate-y-180">
-                  {/* Front */}
-                  <div
-                    className={`absolute w-full h-full rounded-3xl shadow-2xl p-6 flex flex-col justify-center items-center backface-hidden transition-colors duration-700 ${
-                      darkMode
-                        ? "bg-slate-800/80 border border-slate-700"
-                        : "bg-white/90 border border-slate-200"
-                    }`}
-                  >
-                    <h3
-                      className={`text-2xl font-bold mb-2 ${
-                        darkMode ? "text-slate-100" : "text-slate-900"
-                      }`}
-                    >
-                      {pdf.title}
-                    </h3>
-                    <p
-                      className={`text-sm md:text-base text-center ${
-                        darkMode ? "text-slate-300" : "text-slate-700"
-                      }`}
-                    >
-                      {pdf.description}
-                    </p>
-                    <span
-                      className={`mt-4 text-xs ${
-                        darkMode ? "text-slate-400" : "text-slate-500"
-                      }`}
-                    >
-                      Click to view full PDF
-                    </span>
-                  </div>
+        {/* Updated grid to 4 columns */}
+        <div className="grid md:grid-cols-4 gap-10 place-items-center">
+          {pdfs.map((pdf, index) => {
+            const isPPT = pdf.link.endsWith(".pptx") || pdf.link.endsWith(".ppt");
 
-                  {/* Back */}
-                  <div
-                    className={`absolute w-full h-full rounded-3xl shadow-2xl overflow-hidden rotate-y-180 backface-hidden transition-colors duration-700 ${
-                      darkMode
-                        ? "bg-slate-900/80 border border-slate-700"
-                        : "bg-white/90 border border-slate-200"
-                    }`}
-                  >
-                    <iframe
-                      src={pdf.link + "#toolbar=0&navpanes=0&scrollbar=0"}
-                      className="w-full h-full rounded-3xl border-0"
-                      title={pdf.title}
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.05 }}
+                className="w-full max-w-sm cursor-pointer"
+                onClick={() => {
+                  if (isPPT) {
+                    window.open(pdf.link, "_blank");
+                  }
+                }}
+              >
+                <div className="relative w-full h-[380px] perspective">
+                  <div className="relative w-full h-full transition-transform duration-700 transform-style preserve-3d hover:rotate-y-180">
+                    {/* Front */}
+                    <div
+                      className={`absolute w-full h-full rounded-3xl shadow-2xl p-6 flex flex-col justify-center items-center backface-hidden transition-colors duration-700 ${
+                        darkMode
+                          ? "bg-slate-800/80 border border-slate-700"
+                          : "bg-white/90 border border-slate-200"
+                      }`}
                     >
-                      Your browser does not support PDFs.
-                    </iframe>
+                      <h3
+                        className={`text-2xl font-bold mb-2 ${
+                          darkMode ? "text-slate-100" : "text-slate-900"
+                        }`}
+                      >
+                        {pdf.title}
+                      </h3>
+                      <p
+                        className={`text-sm md:text-base text-center ${
+                          darkMode ? "text-slate-300" : "text-slate-700"
+                        }`}
+                      >
+                        {pdf.description}
+                      </p>
+                      <span
+                        className={`mt-4 text-xs ${
+                          darkMode ? "text-slate-400" : "text-slate-500"
+                        }`}
+                      >
+                        {isPPT ? "Click to download or open file" : "Click to view full PDF"}
+                      </span>
+                    </div>
+
+                    {/* Back */}
+                    <div
+                      className={`absolute w-full h-full rounded-3xl shadow-2xl overflow-hidden rotate-y-180 backface-hidden transition-colors duration-700 ${
+                        darkMode
+                          ? "bg-slate-900/80 border border-slate-700"
+                          : "bg-white/90 border border-slate-200"
+                      }`}
+                    >
+                      {isPPT ? (
+                        <div className="w-full h-full flex flex-col items-center justify-center">
+                          <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Microsoft_PowerPoint_2013_logo.svg"
+                            alt="PowerPoint Icon"
+                            className="w-20 h-20 mb-4 opacity-80"
+                          />
+                          <p
+                            className={`text-sm ${
+                              darkMode ? "text-slate-300" : "text-slate-700"
+                            }`}
+                          >
+                            Click to download presentation
+                          </p>
+                        </div>
+                      ) : (
+                        <iframe
+                          src={pdf.link + "#toolbar=0&navpanes=0&scrollbar=0"}
+                          className="w-full h-full rounded-3xl border-0"
+                          title={pdf.title}
+                        >
+                          Your browser does not support PDFs.
+                        </iframe>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Custom CSS for flip effect */}
       <style jsx>{`
         .perspective {
           perspective: 1000px;

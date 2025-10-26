@@ -160,14 +160,15 @@ export default function Hero() {
                   : "border-slate-200/60 bg-white/40"
               }`}
             >
-              <Image
-                src="https://raw.githubusercontent.com/Adeeb199/portfolio/main/portfolio-image.jpg"
-                alt="Adeeb Ibrahim - React & Three.js Developer"
-                width={650}
-                height={520}
-                priority
-                className="object-cover rounded-3xl"
-              />
+         <Image
+  src="/portfolio-image.jpg"
+  alt="Adeeb Ibrahim - React & Three.js Developer"
+  width={650}
+  height={520}
+  priority
+  className="object-cover rounded-3xl"
+/>
+
             </div>
           </motion.div>
         </motion.div>

@@ -19,14 +19,14 @@ export default function Team() {
       name: "Adeeb Ibrahim",
       role: "Frontend Developer",
       image:
-        "https://raw.githubusercontent.com/Adeeb199/portfolio/main/portfolio-image.jpg",
+        "/Team-image.jpg",
       description:
         "Specializes in crafting responsive and interactive user interfaces using React, Next.js, Tailwind CSS, and Framer Motion. Passionate about building clean, animated, and high-performance web experiences.",
     },
     {
       name: "Maria Akber",
       role: "Backend Developer",
-      image: "https://randomuser.me/api/portraits/women/55.jpg",
+      image: "/maria.jpg",
       description:
         "Expert in developing scalable backend systems with Node.js, Express, and MongoDB. Focused on API design, data security, and seamless server-client integration for modern web applications.",
     },

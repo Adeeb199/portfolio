@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Star, ArrowLeft, ShoppingBag } from "lucide-react";
 import { useStore } from "../../store/useStore";
+import { Globe } from "lucide-react";
 
 interface Project {
   id: string;
@@ -34,28 +35,29 @@ export default function ProjectDetail({ id }: ProjectDetailProps) {
 // ✅ Complete Project Data (7 Projects with your IDs)
 const projects: Project[] = [
   {
-    id: "brand-identity",
-    title: "Brand Identity Design",
-    category: "Branding",
-    image:
-    "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=80",  
-    description:
-      "A comprehensive branding project including logo design, typography, and visual identity. Built for startups seeking a consistent, memorable presence across all platforms.",
-    budget: "$1,200",
-    buyLink: "#",
-    template: "Premium Brand Kit",
-    rating: 4.9,
-    reviews: 132,
-    duration: "2 Weeks",
-    features: [
-      "Logo Design & Icon Set",
-      "Typography & Color Guidelines",
-      "Stationery Design",
-      "Brand Guideline PDF",
-      "Social Media Assets",
-    ],
-    technologies: ["Adobe Illustrator", "Photoshop", "Figma"],
-  },
+  id: "shadcn-landing",
+  title: "Shadcn Landing Page Template",
+  category: "UI Template",
+  image:
+    "https://image.thum.io/get/https://shadcn-landingpage.vercel.app/",
+  description:
+    "A minimal yet powerful landing page template built with React, TypeScript, Tailwind CSS, and shadcn/ui. It features hero sections, feature grids, pricing tiers, and testimonial layouts — ideal for SaaS startups or modern web apps.",
+  budget: "Free",
+  buyLink: "https://shadcn-landingpage.vercel.app/",
+  template: "Modern SaaS Template",
+  rating: 4.9,
+  reviews: 486,
+  duration: "Instant Download",
+  features: [
+    "Hero and Feature Sections",
+    "Pricing and Testimonial Blocks",
+    "Responsive Dark/Light Mode",
+    "Fully Customizable with Tailwind",
+    "Built with shadcn/ui Components",
+  ],
+  technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+},
+
   {
     id: "social-app",
     title: "Social App Prototype",
@@ -80,53 +82,7 @@ const projects: Project[] = [
     ],
     technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "React Native"],
   },
-  {
-    id: "creative-studio",
-    title: "Creative Studio Portfolio",
-    category: "Design",
-    image:
-    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",  
-    description:
-      "A high-end portfolio for a creative agency showcasing projects, services, and team culture. Built with attention to detail and interactive animations to attract design clients.",
-    budget: "$1,800",
-    buyLink: "#",
-    template: "Creative Agency Template",
-    rating: 4.9,
-    reviews: 156,
-    duration: "2.5 Weeks",
-    features: [
-      "Animated Gallery Grid",
-      "Case Study Pages",
-      "Parallax Scrolling",
-      "Client Testimonials",
-      "Contact CTA Section",
-    ],
-    technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "GSAP"],
-  },
-  {
-    id: "marketing-dashboard",
-    title: "Marketing Dashboard",
-    category: "Strategy",
-    image:
-    "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80",
-       
-    description:
-      "An interactive marketing analytics dashboard with real-time insights and data visualization tools for campaign performance tracking.",
-    budget: "$2,800",
-    buyLink: "#",
-    template: "Marketing Insights Template",
-    rating: 4.8,
-    reviews: 245,
-    duration: "3 Weeks",
-    features: [
-      "KPI & Chart Widgets",
-      "Custom Filters",
-      "User Performance Tracking",
-      "Dark/Light Themes",
-      "Exportable Reports",
-    ],
-    technologies: ["Next.js", "Recharts", "Zustand", "Tailwind CSS"],
-  },
+  
   {
     id: "product-landing",
     title: "Product Landing Page",
@@ -152,15 +108,15 @@ const projects: Project[] = [
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
   },
   {
-    id: "startup-mobile",
-    title: "Startup Mobile App",
-    category: "Mobile UI",
+    id: "Gallery",
+    title: "Gallery",
+    category: "Web Applications",
     image:
-     "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
+     "https://image.thum.io/get/https://adeeb199.github.io/Gallery/",
         
     description:
       "A sleek mobile UI concept for startup-focused applications. Prioritizes usability, onboarding experience, and aesthetic harmony.",
-    budget: "$2,000",
+    budget: "$199",
     buyLink: "#",
     template: "Startup Mobile Kit",
     rating: 4.9,
@@ -175,30 +131,30 @@ const projects: Project[] = [
     ],
     technologies: ["React Native", "Expo", "Figma"],
   },
-  {
-    id: "modern-saas",
-    title: "Modern SaaS Platform",
-    category: "Technology",
-    image:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
-      
-    description:
-      "A polished SaaS web platform with dynamic pricing pages, client dashboards, and subscription management integrated with Stripe.",
-    budget: "$3,800",
-    buyLink: "#",
-    template: "SaaS Web Template",
-    rating: 5.0,
-    reviews: 254,
-    duration: "4 Weeks",
-    features: [
-      "Stripe Payment System",
-      "Dynamic Pricing Tables",
-      "User Auth & Dashboard",
-      "Feature Comparison Section",
-      "Analytics Integration",
-    ],
-    technologies: ["Next.js", "Stripe", "Zustand", "Tailwind CSS", "TypeScript"],
-  },
+ {
+  id: "axis-landing",
+  title: "Axis – Responsive Multi-Section Web App Template",
+  category: "Web Application",
+  image:
+    "https://image.thum.io/get/https://adeeb199.github.io/Axis/",
+  description:
+    "A sleek and responsive productivity web application designed to help users organize tasks, track progress, and boost efficiency through a minimal and intuitive interface.",
+  budget: "free",
+  buyLink: "https://adeeb199.github.io/Axis/",
+  template: "Axis – Responsive Multi-Section Web App Template",
+  rating: 4.9,
+  reviews: 13,
+  duration: "3 Weeks",
+  features: [
+    "Responsive Landing Page Design",
+    "Interactive Navigation & Animations",
+    "Smooth Scroll and Hero Section",
+    "Task Management UI Components",
+    "Optimized for Performance & SEO",
+  ],
+  technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+}
+
 ];
 
   const project = projects.find((p) => p.id === id);
@@ -341,12 +297,31 @@ const projects: Project[] = [
             </div>
 
             {/* Buy Template Button */}
-            <Link
-              href={project.buyLink}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-white bg-gradient-to-r from-indigo-500 to-pink-500 hover:opacity-90 transition-all duration-300 shadow-lg"
-            >
-              <ShoppingBag className="w-5 h-5" /> Buy Template
-            </Link>
+{/* Action Buttons (Live Demo + Download Code) */}
+<div className="flex flex-wrap items-center gap-4 mt-6">
+  {/* 🌐 Live Demo Button */}
+  <Link
+    href={project.buyLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-white bg-gradient-to-r from-indigo-500 to-pink-500 hover:opacity-90 transition-all duration-300 shadow-lg"
+  >
+    <Globe className="w-5 h-5" /> Live Demo
+  </Link>
+
+  {/* 💾 Download Code Button */}
+  <Link
+    href="https://github.com/Adeeb199/Axis/archive/refs/heads/main.zip"
+    target="_blank"
+    rel="noopener noreferrer"
+    download
+    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-white bg-gradient-to-r from-pink-500 to-indigo-500 hover:opacity-90 transition-all duration-300 shadow-lg"
+  >
+    <ShoppingBag className="w-5 h-5" /> Download Code
+  </Link>
+</div>
+
+       
           </motion.div>
         </div>
 

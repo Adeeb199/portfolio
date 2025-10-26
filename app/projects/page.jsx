@@ -11,15 +11,16 @@ export default function Projects() {
   const router = useRouter();
 
   const projects = [
-    {
-      id: "brand-identity",
-      title: "Brand Identity Design",
-      category: "Branding",
-      image:
-        "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=80",
-      description:
-        "A comprehensive branding project including logo design, visual identity, and brand guidelines.",
-    },
+ {
+  id: "shadcn-landing",
+  title: "Modern SaaS Landing Page Template",
+  category: "Web Template",
+  image:
+    "https://image.thum.io/get/https://shadcn-landingpage.vercel.app/",
+  description:
+    "A fully-responsive landing page template built with shadcn/ui, React, TypeScript and Tailwind CSS, featuring all common sections like Hero, Features, Testimonials, Pricing and Dark Mode support.",
+},
+
     {
       id: "social-app",
       title: "Social App Prototype",
@@ -30,45 +31,23 @@ export default function Projects() {
         "A mobile-first social application prototype focusing on UX, UI, and interactive animations.",
     },
     {
-      id: "creative-studio",
-      title: "Creative Studio Portfolio",
-      category: "Design",
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
-      description: "A showcase of creative design work for a digital studio.",
-    },
-    {
-      id: "marketing-dashboard",
-      title: "Marketing Dashboard",
-      category: "Strategy",
-      image:
-        "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=80",
-      description: "Interactive dashboard for monitoring marketing KPIs and data.",
-    },
-    {
-      id: "product-landing",
-      title: "Product Landing Page",
-      category: "Web Development",
-      image:
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-      description: "A modern, responsive landing page for a digital product.",
-    },
-    {
-      id: "startup-mobile",
-      title: "Startup Mobile App",
-      category: "Mobile UI",
-      image:
-        "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",
+      id: "Gallery",
+      title: "Gallery",
+      category: "Web Application",
+      image: "https://image.thum.io/get/https://adeeb199.github.io/Gallery/",
       description: "UI/UX design for a mobile app aimed at startups.",
     },
-    {
-      id: "modern-saas",
-      title: "Modern SaaS Platform",
-      category: "Technology",
-      image:
-        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
-      description: "Design and prototype for a modern SaaS application.",
-    },
+
+    
+{
+  id: "axis-landing",
+  title: "Axis – Responsive Multi-Section Web App Template",
+  category: "Web Application",
+  image: "https://image.thum.io/get/https://adeeb199.github.io/Axis/", 
+  description:
+    "A modern, responsive productivity platform built to help users organize tasks efficiently with a clean UI and fast performance. Designed using HTML, CSS, and JavaScript with elegant animations.",
+}
+
   ];
 
   const handleCardClick = (id) => {

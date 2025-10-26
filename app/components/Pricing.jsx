@@ -13,7 +13,7 @@ const [selectedPlan, setSelectedPlan] = useState(null);
   const plans = [
     {
       name: "Template",
-      price: "$29",
+      price: "$79",
       feature: "Ready-to-use UI templates for developers & designers.",
       features: [
         "Responsive React & Next.js Templates",
@@ -26,7 +26,7 @@ const [selectedPlan, setSelectedPlan] = useState(null);
     },
     {
       name: "Complete Project",
-      price: "$99",
+      price: "$199",
       feature: "Full ready-to-deploy projects with complete functionality.",
       features: [
         "End-to-End Working Projects",
